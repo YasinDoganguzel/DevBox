@@ -8,7 +8,7 @@ tasks:
     parameters:
       repositoryUrl: https://dev.azure.com/DEOP-INTERNAL/project-element-fleet-ado/_git/simple-java-application
       directory: C:\Workspaces
-      pat: "8ycgHqI1nyS5XYIZdHV7hKMUHg0Z56kINpQVoSyPOuAMZ9AucAD5JQQJ99BCACAAAAA3uUMpAAASAZDO4VLq"
+      pat: "YOUR_PERSONAL_ACCESS_TOKEN"
 
   - name: choco
     description: Install VSCode
@@ -24,3 +24,13 @@ tasks:
     description: Install AWS CLI
     parameters:
       package: awscli
+
+  - name: choco
+    description: Install Azure CLI (Azure MCP)
+    parameters:
+      package: azure-cli
+
+  - name: choco
+    description: Install GitHub CLI (GitHub MCP)
+    parameters:
+      package: gh

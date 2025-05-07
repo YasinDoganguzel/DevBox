@@ -24,7 +24,7 @@ tasks:
       package: docker-desktop
 
   - name: choco
-    description: Install AZ CLI
+    description: Install AZ CLI (Azure MCP)
     parameters:
       package: azure-cli
 
@@ -32,6 +32,11 @@ tasks:
     description: Install KUBECTL
     parameters:
       package: kubernetes-cli
+
+  - name: choco
+    description: Install GitHub CLI (GitHub MCP)
+    parameters:
+      package: gh
 
 userTasks:
   - name: ~/powershell
