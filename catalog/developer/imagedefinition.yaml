@@ -1,0 +1,26 @@
+$schema: "1.0"
+name: "java-developer"
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-24H2-ent-cpc
+
+tasks:
+  - name: git-clone
+    description: Clone this repository into C:\Workspaces
+    parameters:
+      repositoryUrl: https://dev.azure.com/DEOP-INTERNAL/project-element-fleet-ado/_git/simple-java-application
+      directory: C:\Workspaces
+      pat: "8ycgHqI1nyS5XYIZdHV7hKMUHg0Z56kINpQVoSyPOuAMZ9AucAD5JQQJ99BCACAAAAA3uUMpAAASAZDO4VLq"
+
+  - name: choco
+    description: Install VSCode
+    parameters:
+      package: vscode
+
+  - name: choco
+    description: Install Java
+    parameters:
+      package: openjdk
+
+  - name: choco
+    description: Install AWS CLI
+    parameters:
+      package: awscli

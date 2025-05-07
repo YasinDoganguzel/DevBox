@@ -1,0 +1,17 @@
+$schema: "1.0"
+name: "java-devopserino"
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-24H2-ent-cpc
+
+tasks:
+  - name: ~/winget
+    parameters:
+      package: Python.Python.3.12
+      version: 3.11.0
+
+userTasks:
+  - name: ~/powershell
+    parameters:
+      command: |
+        powershell.exe -NoProfile -InputFormat None -ExecutionPolicy AllSigned -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://dl-cli.pstmn.io/install/win64.ps1'))"
+
+        code --install-extension GitHub.copilot

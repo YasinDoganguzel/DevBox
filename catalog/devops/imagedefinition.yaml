@@ -1,0 +1,42 @@
+$schema: "1.0"
+name: "java-devops"
+image: microsoftwindowsdesktop_windows-ent-cpc_win11-24H2-ent-cpc
+
+tasks:
+  - name: choco
+    description: Install VSCode
+    parameters:
+      package: vscode
+
+  - name: choco
+    description: Install Java
+    parameters:
+      package: openjdk
+
+  - name: choco
+    description: Install AWS CLI
+    parameters:
+      package: awscli
+
+  - name: choco
+    description: Install Docker
+    parameters:
+      package: docker-desktop
+
+  - name: choco
+    description: Install AZ CLI
+    parameters:
+      package: azure-cli
+
+  - name: choco
+    description: Install KUBECTL
+    parameters:
+      package: kubernetes-cli
+
+userTasks:
+  - name: ~/powershell
+    parameters:
+      command: |
+        powershell.exe -NoProfile -InputFormat None -ExecutionPolicy AllSigned -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://dl-cli.pstmn.io/install/win64.ps1'))"
+
+        code --install-extension GitHub.copilot
